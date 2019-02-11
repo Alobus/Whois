@@ -1,0 +1,16 @@
+#!/bin/usr/python
+
+import socket,sys
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+ip =  "200.160.2.3"
+port = 43
+
+try:
+	alvo = raw_input(str('send target: '))
+	sock.connect((ip, port))
+	sock.send(alvo + "\n", port)
+	print (sock.recv(1024))
+except:
+	print ("erro")
